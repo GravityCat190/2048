@@ -17,8 +17,7 @@ public class MoveLine : MonoBehaviour
         int distanceMoveSum = 0;
         for (int squareIndex = mapSize - offset; squareIndex >= 0; squareIndex--)
         {
-            bool isCurrentSquareNotEmpty = Convert.ToBoolean(currentArray[squareIndex].Points);
-            if (isCurrentSquareNotEmpty)
+            if (!currentArray[squareIndex].IsEmpty)
             {
                 moveDistance = CheckSquareMoveDistance.CalculateMoveDistance(currentArray, squareIndex);
                 distanceMoveSum += moveDistance;

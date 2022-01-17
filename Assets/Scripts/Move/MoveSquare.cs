@@ -12,11 +12,11 @@ public class MoveSquare : MonoBehaviour
             Square startSquare = currentArray[squareIndex];
             Square destinationSquare = currentArray[squareIndex + moveDistance];
 
-            bool isDestinationSquareNotEmpty = Convert.ToBoolean(destinationSquare.Points);
+            bool destinationSquareWasEmpty = destinationSquare.IsEmpty;
             ChangeDestinationSquare(startSquare, destinationSquare);
             ChangeStartSquare(startSquare);
 
-            if (isDestinationSquareNotEmpty)
+            if (!destinationSquareWasEmpty)
             {
                 onSquareMerged?.Raise(destinationSquare.Points);
             }

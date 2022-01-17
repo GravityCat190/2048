@@ -32,12 +32,9 @@ public class FindEmptySquare : MonoBehaviour
     private Square TryFindRandomSquare()
     {
         int randomIndex = Random.Range(0, squaresAmount);
-        int points;
         for (int i = randomIndex; i < squaresAmount; i++)
         {
-            points = squares[i].Points;
-            bool squareIsNotEmpty = Convert.ToBoolean(points);
-            if (!squareIsNotEmpty)
+            if (squares[i].IsEmpty)
             {
                 return squares[i];
             }
@@ -47,12 +44,9 @@ public class FindEmptySquare : MonoBehaviour
 
     public Square FirstSquare()
     {
-        int points;
         for (int i = 0; i < squaresAmount; i++)
         {
-            points = squares[i].Points;
-            bool squareIsNotEmpty = Convert.ToBoolean(points);
-            if (!squareIsNotEmpty)
+            if (squares[i].IsEmpty)
             {
                 return squares[i];
             }

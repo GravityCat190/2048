@@ -68,7 +68,7 @@ public class PlayerMove : MonoBehaviour
 
     private void CheckIfMoveHasBeenMade(int distanceMoveSum)
     {
-        bool isMove = Convert.ToBoolean(distanceMoveSum);
+        bool isMove = distanceMoveSum != 0;
         if (isMove)
         {
             onPlayerMoved?.Raise();

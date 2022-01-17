@@ -32,9 +32,8 @@ public class CheckSquareMoveDistance : MonoBehaviour
         int checkedSquarePoints = SquareToCheck.Points;
 
         bool canMergeWithNextSquare = checkedSquarePoints == currentSquarePoints;
-        bool isNextSquareNotEmpty = Convert.ToBoolean(checkedSquarePoints);
 
-        if (canMergeWithNextSquare || !isNextSquareNotEmpty)
+        if (canMergeWithNextSquare || SquareToCheck.IsEmpty)
         {
             return true;
         }

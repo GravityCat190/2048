@@ -31,6 +31,8 @@ public class Square : MonoBehaviour
         set => column = value; 
     }
 
+    public bool IsEmpty => points == 0;
+
     private void UpdateText()
     {
         if (points == 0)
