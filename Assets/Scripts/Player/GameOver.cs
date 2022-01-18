@@ -4,36 +4,30 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     [SerializeField]
-    private FindEmptySquare FindEmptySquare;
+    private FindEmptySquare findEmptySquare;
     [SerializeField]
-    private CheckMapForPossibleMove CheckMapForPossibleMove;
-
+    private CheckMapForPossibleMove checkMapForPossibleMove;
 
     public void Check()
     {
-        bool isOver = CheckIfMapIsFull();
-        if (isOver)
-        {
-            isOver = CheckIfPlayerCanMove();
-        }
-        if (isOver)
+        if (IsMapFull() && CanPlayerMove())
         {
             ResetGame();
         }
     }
 
-    private bool CheckIfMapIsFull()
+    private bool IsMapFull()
     {
-        if (FindEmptySquare.FirstSquare() != null)
+        if (findEmptySquare.GetFirstSquare() != null)
         {
             return false;
         }
         return true;
     }
 
-    private bool CheckIfPlayerCanMove()
+    private bool CanPlayerMove()
     {
-        if (CheckMapForPossibleMove.IsPossible())
+        if (checkMapForPossibleMove.IsPossible())
         {
             return false;
         }

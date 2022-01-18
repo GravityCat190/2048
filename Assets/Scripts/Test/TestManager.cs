@@ -9,7 +9,7 @@ public class TestManager : MonoBehaviour
     [SerializeField]
     private Map Map = default;
 
-    private const int mapSize = Map.mapSize;
+    private const int mapSize = Map.MapSize;
 
     private List<int[]> startMaps = new List<int[]>();
     private List<int[]> expectedMaps = new List<int[]>();

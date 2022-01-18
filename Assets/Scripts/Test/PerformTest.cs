@@ -12,7 +12,7 @@ public class PerformTest : MonoBehaviour
     private Map Map = default;
 
     private List<Square> squares;
-    private const int mapSize = Map.mapSize;
+    private const int mapSize = Map.MapSize;
 
     private int[] startMap;
     private int[] expectedMap;

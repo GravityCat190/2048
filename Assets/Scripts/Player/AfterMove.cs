@@ -3,13 +3,13 @@
 public class AfterMove : MonoBehaviour
 {
     [SerializeField]
-    private SpawnManager SpawnManager = default;
+    private SpawnManager spawnManager = default;
     [SerializeField]
-    private GameOver GameOver;
+    private GameOver gameOver;
 
     public void MakeActions()
     {
-        SpawnManager.Spawn();
-        GameOver.Check();
+        spawnManager.Spawn();
+        gameOver.Check();
     }
 }

@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Square : MonoBehaviour
 {
-    [SerializeField]
-    private TMP_Text pointText = default;
+    public int Row;
+    public int Column;
 
     [SerializeField]
+    private TMP_Text pointText = default;
+    
     private int points;
-    private int row;
-    private int column;
 
     public int Points
     {
@@ -19,16 +19,6 @@ public class Square : MonoBehaviour
             points = value;
             UpdateText();
         }
-    }
-    public int Row 
-    { 
-        get => row; 
-        set => row = value; 
-    }
-    public int Column 
-    { 
-        get => column; 
-        set => column = value; 
     }
 
     public bool IsEmpty => points == 0;

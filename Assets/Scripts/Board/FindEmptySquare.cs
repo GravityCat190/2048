@@ -5,31 +5,30 @@ using Random = UnityEngine.Random;
 
 public class FindEmptySquare : MonoBehaviour
 {
+    
     [SerializeField]
     private Map Map;
 
-    private const int mapSize = Map.mapSize;
+    private int squaresAmount = Map.MapSize * Map.MapSize;
     private List<Square> squares;
-
-    int squaresAmount = mapSize * mapSize;
 
     private void Awake()
     {
         squares = Map.Squares;
     }
 
-    public Square RandomSquare()
+    public Square GetRandomSquare()
     {
-        Square square = TryFindRandomSquare();
+        Square square = TryGetRandomSquare();
         if (square == null)
         {
-            square = FirstSquare();
+            square = GetFirstSquare();
         }
 
         return square;
     }
 
-    private Square TryFindRandomSquare()
+    private Square TryGetRandomSquare()
     {
         int randomIndex = Random.Range(0, squaresAmount);
         for (int i = randomIndex; i < squaresAmount; i++)
@@ -42,7 +41,7 @@ public class FindEmptySquare : MonoBehaviour
         return null;
     }
 
-    public Square FirstSquare()
+    public Square GetFirstSquare()
     {
         for (int i = 0; i < squaresAmount; i++)
         {

@@ -4,15 +4,13 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField]
-    private Map Map = default;
+    private Map map = default;
     [SerializeField]
-    private ReadMap ReadMap = default;
+    private ReadMap readMap = default;
     [SerializeField]
-    private MoveLine MoveLine = default;
+    private MoveLine moveLine = default;
     [SerializeField]
     private VoidGameEvent onPlayerMoved;
-
-    private const int mapSize = Map.mapSize;
 
     private void Move(Square[][] MapSnapshot)
     {
@@ -21,47 +19,47 @@ public class PlayerMove : MonoBehaviour
         for (int i = 0; i < MapSnapshot.Length; i++)
         {
             currentArray = MapSnapshot[i];
-            distanceMoveSum += MoveLine.Move(currentArray);
+            distanceMoveSum += moveLine.Move(currentArray);
         }
         CheckIfMoveHasBeenMade(distanceMoveSum);
     }
 
     public void MoveUp()
     {
-        Square[][] MapSnapshotInChoosenDirection = new Square[mapSize][];
-        for (int i = 0; i < mapSize; i++)
+        Square[][] MapSnapshotInChoosenDirection = new Square[Map.MapSize][];
+        for (int i = 0; i < Map.MapSize; i++)
         {
-            MapSnapshotInChoosenDirection[i] = ReadMap.ReturnColumnBackward(i);
+            MapSnapshotInChoosenDirection[i] = readMap.ReturnColumnBackward(i);
         }
         Move(MapSnapshotInChoosenDirection);
     }
 
     public void MoveDown()
     {
-        Square[][] MapSnapshotInChoosenDirection = new Square[mapSize][];
-        for (int i = 0; i < mapSize; i++)
+        Square[][] MapSnapshotInChoosenDirection = new Square[Map.MapSize][];
+        for (int i = 0; i < Map.MapSize; i++)
         {
-            MapSnapshotInChoosenDirection[i] = ReadMap.ReturnColumn(i);
+            MapSnapshotInChoosenDirection[i] = readMap.ReturnColumn(i);
         }
         Move(MapSnapshotInChoosenDirection);
     }
 
     public void MoveLeft()
     {
-        Square[][] MapSnapshotInChoosenDirection = new Square[mapSize][];
-        for (int i = 0; i < mapSize; i++)
+        Square[][] MapSnapshotInChoosenDirection = new Square[Map.MapSize][];
+        for (int i = 0; i < Map.MapSize; i++)
         {
-            MapSnapshotInChoosenDirection[i] = ReadMap.ReturnRowBackward(i);
+            MapSnapshotInChoosenDirection[i] = readMap.ReturnRowBackward(i);
         }
         Move(MapSnapshotInChoosenDirection);
     }
 
     public void MoveRight()
     {
-        Square[][] MapSnapshotInChoosenDirection = new Square[mapSize][];
-        for (int i = 0; i < mapSize; i++)
+        Square[][] MapSnapshotInChoosenDirection = new Square[Map.MapSize][];
+        for (int i = 0; i < Map.MapSize; i++)
         {
-            MapSnapshotInChoosenDirection[i] = ReadMap.ReturnRow(i);
+            MapSnapshotInChoosenDirection[i] = readMap.ReturnRow(i);
         }
         Move(MapSnapshotInChoosenDirection);
     }

@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class PointSystem : MonoBehaviour
 {
-    private int actualPoints = 0;
     [SerializeField]
     private TextMeshProUGUI pointsTextMesh;
+
+    private int actualPoints = 0;
 
     private void Start()
     {

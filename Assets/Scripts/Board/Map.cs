@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
+    public const int MapSize = 4;
+
     [SerializeField]
     private Transform squaresContainer = default;
 
     private List<Square> squares = new List<Square>();
-
-    public const int mapSize = 4;
 
     public List<Square> Squares 
     { 
@@ -16,6 +16,11 @@ public class Map : MonoBehaviour
     }
 
     private void Awake()
+    {
+        FillSquaresList();
+    }
+
+    private void FillSquaresList()
     {
         foreach (Transform child in squaresContainer)
         {

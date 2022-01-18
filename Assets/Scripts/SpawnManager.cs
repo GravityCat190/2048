@@ -5,7 +5,10 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject squares;
     [SerializeField]
-    private FindEmptySquare FindEmptySquare;
+    private FindEmptySquare findEmptySquare;
+
+    private const int PointsAtStartSmall = 2;
+    private const int PointsAtStartBig = 4;
 
     private void Start()
     {
@@ -13,7 +16,7 @@ public class SpawnManager : MonoBehaviour
     }
     public void Spawn()
     {
-        Square squareToSpawn = FindEmptySquare.RandomSquare();
+        Square squareToSpawn = findEmptySquare.GetRandomSquare();
         SetPoints(squareToSpawn);
     }
 
@@ -28,11 +31,11 @@ public class SpawnManager : MonoBehaviour
         bool setTwoPoint = (Random.value > 0.5f);
         if (setTwoPoint)
         {
-            return 2;
+            return PointsAtStartSmall;
         }
         else
         {
-            return 4;
+            return PointsAtStartBig;
         }
     }
 }

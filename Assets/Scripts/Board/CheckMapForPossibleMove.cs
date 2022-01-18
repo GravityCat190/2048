@@ -1,19 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CheckMapForPossibleMove : MonoBehaviour
 {
     [SerializeField]
-    private Map Map = default;
+    private Map map = default;
     [SerializeField]
-    private CheckSquareNeighbors CheckSquareNeighbors = default;
+    private CheckSquareNeighbors checkSquareNeighbors = default;
 
     public bool IsPossible()
     {
-        foreach (Square square in Map.Squares)
+        foreach (Square square in map.Squares)
         {
-            if (CheckSquareNeighbors.IsPossibleToMoveOnNeighbor(square))
+            if (checkSquareNeighbors.IsPossibleToMoveOnNeighbors(square))
             {
                 return true;
             }

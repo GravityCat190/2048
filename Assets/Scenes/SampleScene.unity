@@ -984,8 +984,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd39235a43001b24c82e8fdc95140665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Map: {fileID: 2035682850}
-  CheckSquareNeighbors: {fileID: 1377054472}
+  map: {fileID: 2035682850}
+  checkSquareNeighbors: {fileID: 1377054472}
 --- !u!1 &361270752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,9 +1029,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8493e3035ecd23e45801e2f55543388b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Map: {fileID: 2035682850}
-  ReadMap: {fileID: 1283708645}
-  MoveLine: {fileID: 2060912179}
+  map: {fileID: 2035682850}
+  readMap: {fileID: 1283708645}
+  moveLine: {fileID: 2060912179}
   onPlayerMoved: {fileID: 11400000, guid: a62dab82842b8f14f9f46c6c7dce1954, type: 2}
 --- !u!1001 &408452935
 PrefabInstance:
@@ -1435,8 +1435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f43f9ee225924bc42b4047f36e77b1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnManager: {fileID: 710124438}
-  GameOver: {fileID: 2032283659}
+  spawnManager: {fileID: 710124438}
+  gameOver: {fileID: 2032283659}
 --- !u!4 &611528787
 Transform:
   m_ObjectHideFlags: 0
@@ -1555,7 +1555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   squares: {fileID: 1618841351}
-  FindEmptySquare: {fileID: 765025851}
+  findEmptySquare: {fileID: 765025851}
 --- !u!1 &765025849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,7 +2203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734a639ca40fd5245b4c61e7a118748c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Map: {fileID: 2035682850}
+  map: {fileID: 2035682850}
 --- !u!1 &1377054470
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,7 +2247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38adc273751717f458b456f6c4a40d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Map: {fileID: 2035682850}
+  map: {fileID: 2035682850}
 --- !u!1001 &1454847027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2440,7 +2440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282b5a1b15e90514998cbf78386cca11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerMove: {fileID: 361270754}
+  playerMove: {fileID: 361270754}
 --- !u!4 &1670951202
 Transform:
   m_ObjectHideFlags: 0
@@ -2484,8 +2484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e51f1da88eb334488883a3267f442a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FindEmptySquare: {fileID: 765025851}
-  CheckMapForPossibleMove: {fileID: 337156179}
+  findEmptySquare: {fileID: 765025851}
+  checkMapForPossibleMove: {fileID: 337156179}
 --- !u!4 &2032283660
 Transform:
   m_ObjectHideFlags: 0
@@ -2593,8 +2593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf287355a698054e9b7f9457344b2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CheckSquareMoveDistance: {fileID: 968189013}
-  MoveSquare: {fileID: 1274404788}
+  checkSquareMoveDistance: {fileID: 968189013}
+  moveSquare: {fileID: 1274404788}
 --- !u!1001 &2138291489
 PrefabInstance:
   m_ObjectHideFlags: 0

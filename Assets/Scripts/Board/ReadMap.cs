@@ -1,25 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ReadMap : MonoBehaviour
 {
     [SerializeField]
-    private Map Map = default;
+    private Map map = default;
 
     private List<Square> squares = default;
 
-    private Square[,] rows = new Square[mapSize,mapSize];
+    private Square[,] rows = new Square[mapSize, mapSize];
     private Square[,] columns = new Square[mapSize, mapSize];
 
-    private const int mapSize = Map.mapSize;
+    private const int mapSize = Map.MapSize;
 
     private void Awake()
     {
-        squares = Map.Squares;
+        squares = map.Squares;
     }
 
     private void Start()
+    {
+        FillRowAndColumnData();
+    }
+
+    private void FillRowAndColumnData()
     {
         int currentIndex;
         for (int row = 0; row < mapSize; row++)
@@ -28,8 +32,8 @@ public class ReadMap : MonoBehaviour
             {
                 currentIndex = row * mapSize + column;
 
-                rows[row,column] = squares[currentIndex];
-                columns[column,row] = squares[currentIndex];
+                rows[row, column] = squares[currentIndex];
+                columns[column, row] = squares[currentIndex];
 
                 squares[currentIndex].Row = row;
                 squares[currentIndex].Column = column;

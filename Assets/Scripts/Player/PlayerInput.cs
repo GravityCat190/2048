@@ -3,25 +3,25 @@
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField]
-    private PlayerMove PlayerMove = default;
+    private PlayerMove playerMove = default;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            PlayerMove.MoveUp();
+            playerMove.MoveUp();
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            PlayerMove.MoveDown();
+            playerMove.MoveDown();
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            PlayerMove.MoveLeft();
+            playerMove.MoveLeft();
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            PlayerMove.MoveRight();
+            playerMove.MoveRight();
         }
     }
 }
